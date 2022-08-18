@@ -1,16 +1,12 @@
-package com.myorg;
+package com.ovaldez.cdk.app;
 
 import software.amazon.awscdk.App;
-import software.amazon.awscdk.Environment;
-import software.amazon.awscdk.StackProps;
-
-import java.util.Arrays;
 
 public class ProductApiCdkApp {
     public static void main(final String[] args) {
         App app = new App();
 
-        new ProductApiCdkStack(app, "ProductApiCdkStack", StackProps.builder()
+        //new ProductApiCdkStack(app, "ProductApiCdkStack", StackProps.builder()
                 // If you don't specify 'env', this stack will be environment-agnostic.
                 // Account/Region-dependent features and context lookups will not work,
                 // but a single synthesized template can be deployed anywhere.
@@ -22,8 +18,8 @@ public class ProductApiCdkApp {
                         .account(System.getenv("CDK_DEFAULT_ACCOUNT"))
                         .region(System.getenv("CDK_DEFAULT_REGION"))
                         .build())
+                
                 */
-
                 // Uncomment the next block if you know exactly what Account and Region you
                 // want to deploy the stack to.
                 /*
@@ -34,8 +30,8 @@ public class ProductApiCdkApp {
                 */
 
                 // For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
-                .build());
-
+                //.build());
+        new ProductApiCdkStack(app, "ProductApiCdkStack");
         app.synth();
     }
 }
